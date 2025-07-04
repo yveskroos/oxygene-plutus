@@ -22,10 +22,8 @@ main = do
 
 
 ghc Main.hs -o digits && ./digits
-```
 
 Ou avec Cabal :
 
 
 cabal run
-```
