@@ -1,0 +1,31 @@
+HC6T10, une fonction récursive en Haskell qui prend un nombre entier et retourne la liste de ses chiffres :
+
+  
+  Extraction récursive des chiffres d’un nombre
+
+-- Fonction récursive pour obtenir la liste des chiffres d'un nombre positif
+digits :: Integer -> [Integer]
+digits n
+    | n < 10    = [n]
+    | otherwise = digits (n 'div' 10) ++ [n 'mod' 10]
+
+-- Fonction main pour tester
+main :: IO ()
+main = do
+    let number = 12345
+    putStrLn ("Les chiffres de " ++ show number ++ " sont : " ++ show (digits number))
+
+  Exécution
+
+1. Sauvegarde dans `Main.hs`.
+2. Compile et exécute :
+
+
+ghc Main.hs -o digits && ./digits
+```
+
+Ou avec Cabal :
+
+
+cabal run
+```
